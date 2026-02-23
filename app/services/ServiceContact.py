@@ -15,3 +15,10 @@ class ServiceContact:
 			print("Liste des contacts :")
 			for idx, contact in enumerate(self.contacts, 1):
 				print(f"{idx}. {contact.nom} - {contact.numero}")
+
+	def delete_contacts(self, nom):
+		for contact in self.contacts:
+			if contact.nom == nom:
+				self.contacts.remove(contact)
+				return
+		print("Contact non trouvé.")
