@@ -33,4 +33,14 @@ class ServiceContact:
     def count_contacts(self):
         return len(self.contacts)
 
+    def modify_contact(self, nom, new_nom=None, new_numero=None):
+        for contact in self.contacts:
+            if contact.nom == nom:
+                if new_nom:
+                    contact.nom = new_nom
+                if new_numero:
+                    contact.numero = new_numero
+                return
+        print("Contact non trouvé.")
+
 

@@ -9,7 +9,8 @@ def main():
         print("3. Supprimer un contact")
         print("4. Vérifier si un numéro existe déjà")
         print("5. Voir le nombre total de contacts")
-        print("6. Quitter")
+        print("6. Modifier un contact")
+        print("7. Quitter")
         choice = input("Choisissez une option : ")
 
         match choice:
@@ -33,6 +34,11 @@ def main():
             case "5":
                 print(f"Nombre total de contacts : {service.count_contacts()}")
             case "6":
+                nom = input("Nom du contact à modifier : ")
+                new_nom = input("Nouveau nom (laisser vide si inchangé) : ") or None
+                new_numero = input("Nouveau numéro (laisser vide si inchangé) : ") or None
+                service.modify_contact(nom, new_nom=new_nom, new_numero=new_numero)
+            case "7":
                 print("Au revoir !")
                 break
             case _:
